@@ -45,4 +45,4 @@ jobs:
         file: "Dockerfile"
         push: true
         tags: |
-          rgriffogoes/ad-mqtt:${{steps.getrefs.outputs.sha12}}, rgriffogoes/ad-mqtt:latest
+          f1d094/alarmdecoder-mqtt:${{steps.getrefs.outputs.sha12}}, f1d094/alarmdecoder-mqtt:latest
