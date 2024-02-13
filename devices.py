@@ -1,3 +1,16 @@
+# Steps for Honeywell Vista 20p to get each zone number and zone type below
+# 
+# Using an alphanumeric panel (e.g. 6160) or AlarmDecoder-WebApp + AlarmDecoder:
+# 
+#  1) Enter Programming Mode: <install code> + 800
+#  2) Enter Zone-edit mode: *56
+#  3) Enter 0 
+#  4) Hit * to cycle through all zones and record them
+#
+# Lookup sensor type here: https://www.home-assistant.io/integrations/binary_sensor/ (e.g. door, motion, window)
+# 
+# Update devices.py with details from above
+
 def get_devices():
     return [
     # Zone( zone_number, HAS_entity_name, description, device_class )

@@ -20,9 +20,9 @@ cfg.mqtt.port = int(os.getenv("ADMQTT_MQTT_PORT",1883))
 cfg.mqtt.username = os.getenv("ADMQTT_MQTT_USERNAME",None)
 cfg.mqtt.password = os.getenv("ADMQTT_MQTT_PASSWORD",None)
 # Optional encryption settings for the broker.
-cfg.mqtt.encryption.ca_cert = os.getenv("ADMQTT_MQTT_CA_CERT",None)
-cfg.mqtt.encryption.certfile = os.getenv("ADMQTT_MQTT_CERTFILE",None)
-cfg.mqtt.encryption.keyfile = os.getenv("ADMQTT_MQTT_KEYFILE",None)
+cfg.mqtt.encryption['ca_cert'] = os.getenv("ADMQTT_MQTT_CA_CERT",None)
+cfg.mqtt.encryption['certfile'] = os.getenv("ADMQTT_MQTT_CERTFILE",None)
+cfg.mqtt.encryption['keyfile'] = os.getenv("ADMQTT_MQTT_KEYFILE",None)
 
 # Debugging information
 cfg.log.level = os.getenv("ADMQTT_LOG_LEVEL","INFO")

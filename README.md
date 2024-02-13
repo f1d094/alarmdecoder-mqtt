@@ -1,8 +1,8 @@
 
-[![Docker Image CI](https://github.com/rgriffogoes/ad-mqtt/actions/workflows/docker-image.yml/badge.svg)](https://github.com/rgriffogoes/ad-mqtt/actions/workflows/docker-image.yml)
-[![codeql](https://github.com/rgriffogoes/ad-mqtt/actions/workflows/codeql.yml/badge.svg)](https://github.com/rgriffogoes/ad-mqtt/actions/workflows/codeql.yml)
+[![Docker Image CI](https://github.com/f1d094/alarmdecoder-mqtt/actions/workflows/docker-image.yml/badge.svg)](https://github.com/f1d094/alarmdecoder-mqtt/actions/workflows/docker-image.yml)
+[![codeql](https://github.com/f1d094/alarmdecoder-mqtt/actions/workflows/codeql.yml/badge.svg)](https://github.com/f1d094/alarmdecoder-mqtt/actions/workflows/codeql.yml)
 
-#### AlarmDecoder to MQTT Bridge (ad-mqtt)
+#### AlarmDecoder to MQTT Bridge (alarmdecoder-mqtt)
 
 Simple Python application to interface [AlarmDecoder](https://github.com/nutechsoftware/alarmdecoder) with a [MQTT Broker](https://en.wikipedia.org/wiki/MQTT).
 
@@ -13,7 +13,7 @@ can be used to create real "last changed" time sensors if desired in HASS.
 
 ##### Direct python execution
 ```
-git clone https://github.com/TD22057/ad-mqtt.git
+git clone https://github.com/TD22057/alarmdecoder-mqtt.git
 python3 -m venv venv
 ./venv/bin/pip install -r requirements.txt
 
@@ -32,7 +32,7 @@ sudo docker run -e ADMQTT_SOCKET_HOST=192.168.1.71
   -e ADMQTT_MQTT_HOST=192.168.1.6 
   -e ADMQTT_LOG_LEVEL=DEBUG 
   -e ADMQTT_ALARM_CODE=4321
-  -v /home/user/devices.py:/home/devices.py -d ad-mqtt:latest
+  -v /home/user/devices.py:/home/devices.py -d alarmdecoder-mqtt:latest
 ```
 Use devices.py file in this repo as example file for configuring your zones.
 Check run.py for available environment variables.
@@ -43,22 +43,28 @@ Example docker compose file:
 
 version: "3"
 services:
-  ad-mqtt:
-    image: rgriffogoes/ad-mqtt:latest
-    container_name: ad-mqtt
+  alarmdecoder-mqtt:
+    image: f1d094/alarmdecoder-mqtt:latest
+    container_name: alarmdecoder-mqtt
     environment:
       - ADMQTT_SOCKET_HOST=192.168.1.71
       - ADMQTT_MQTT_HOST=192.168.1.6
       - ADMQTT_LOG_LEVEL=DEBUG
       - ADMQTT_ALARM_CODE=4321
     volumes:
-      - /mnt/data/docker-data/ad-mqtt-data/devices.py:/home/devices.py
+      - /mnt/data/docker-data/alarmdecoder-mqtt-data/devices.py:/home/devices.py
     restart: unless-stopped
 
 ```
 Note device.py mounting and environment parameters.
 
 ##### Changelog
+
+###### Version: 0.3.2
+ - Forked from rgriffogoes/ad-mqtt 
+ - Fixed encrytion in run.py to use dict entries
+ - Updated requirements.txt to use modified insteon-mqtt locked to puha-mqtt<=1.6.1
+ - Added notes in devices.py on where to find the data to populate it (Vista 20p)
 
 ###### Version: 0.3.1
  - Adding Device attribute in discovery (sn3ak)
