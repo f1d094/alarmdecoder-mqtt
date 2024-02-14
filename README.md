@@ -13,14 +13,13 @@ can be used to create real "last changed" time sensors if desired in HASS.
 
 ##### Direct python execution
 ```
-git clone https://github.com/TD22057/alarmdecoder-mqtt.git
+git clone https://github.com/f1d094/alarmdecoder-mqtt.git
 python3 -m venv venv
 ./venv/bin/pip install -r requirements.txt
 
-[edit run.py to add ser2sock+mqtt broker host:port settings, 
-edit devices.py to add zone info]
+[ Edit run-with-vars.sh and devices.py accordingly ]
 
-./run.py
+./run-with-vars.sh
 ```
 
 ##### Direct Docker Execution
