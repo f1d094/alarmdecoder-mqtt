@@ -34,7 +34,7 @@ sudo docker run -e ADMQTT_SOCKET_HOST=192.168.1.71
   -v /home/user/devices.py:/home/devices.py -d alarmdecoder-mqtt:latest
 ```
 Use devices.py file in this repo as example file for configuring your zones.
-Check run.py for available environment variables.
+Check run-with-vars.sh for available environment variables.
 
 ##### Docker Compose
 Example docker compose file:
@@ -64,6 +64,7 @@ Note device.py mounting and environment parameters.
  - Fixed encrytion in run.py to use dict entries
  - Updated requirements.txt to use modified insteon-mqtt locked to puha-mqtt<=1.6.1
  - Added notes in devices.py on where to find the data to populate it (Vista 20p)
+ - Updated workflow to create docker image f1d094/alarmdecoder-mqtt
 
 ###### Version: 0.3.1
  - Adding Device attribute in discovery (sn3ak)
