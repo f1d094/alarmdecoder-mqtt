@@ -10,7 +10,7 @@ ADMQTT_SOCKET_PORT="10000"
 
 # Use FQDN / Common Name (CN) of the MQTT server or verify IP address is in SAN if using encrypted MQTT
 # Otherwise the connection will fail
-ADMQTT_MQTT_HOST=""
+ADMQTT_MQTT_HOST="127.0.0.1"
 ADMQTT_MQTT_PORT="1883"
 ADMQTT_MQTT_USERNAME=""
 ADMQTT_MQTT_PASSWORD=""
