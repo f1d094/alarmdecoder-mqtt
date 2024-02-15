@@ -56,7 +56,7 @@ jobs:
       with:
         context: "."
         file: "Dockerfile"
-        platforms: linux/arm64,linux/amd64,linux/arm32
+        platforms: linux/arm64,linux/amd64,linux/arm
         push: true
         tags: |
           f1d094/alarmdecoder-mqtt:${{steps.getrefs.outputs.sha12}}, f1d094/alarmdecoder-mqtt:latest
