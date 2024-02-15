@@ -1,7 +1,6 @@
 name: Docker Image CI (build linux/amd64 + linux/arm64, python dependencies test, push registry)
 
 on:
-  workflow-dispatch
   push:
     branches:
       - "main"
