@@ -1,4 +1,4 @@
-FROM python:3.10.13
+FROM python:3.10.13-bookworm
 
 COPY requirements.txt /home/
 RUN pip install -r /home/requirements.txt
