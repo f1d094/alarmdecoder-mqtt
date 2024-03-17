@@ -64,6 +64,7 @@ Note device.py mounting and environment parameters.
  - Fixed encrytion in run.py to use dict entries
  - Updated requirements.txt to use modified insteon-mqtt locked to puha-mqtt<=1.6.1
  - Added notes in devices.py on where to find the data to populate it (Vista 20p)
+ - Updated Dockerfile to use bookworm, which has images for ARM64
  - Updated workflow to create docker image f1d094/alarmdecoder-mqtt
 
 ###### Version: 0.3.1
